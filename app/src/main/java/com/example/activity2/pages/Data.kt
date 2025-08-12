@@ -20,5 +20,11 @@ import androidx.compose.ui.unit.dp
 fun ShowData(
     onBackBtnClick: () -> Unit
 ) {
+    val items = listOf(
+        Pair("Nama", "Email"),
+        Pair("Email", "me@gmail.com"),
+        Pair("Gender", "Laki - laki")
+    )
 
+    
 }
