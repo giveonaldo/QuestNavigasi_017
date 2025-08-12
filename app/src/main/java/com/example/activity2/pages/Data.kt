@@ -26,5 +26,23 @@ fun ShowData(
         Pair("Gender", "Laki - laki")
     )
 
-    
+    Scaffold { item ->
+        Column(
+            modifier = Modifier.padding(item).height(500.dp).fillMaxWidth(),
+            verticalArrangement = Arrangement.spacedBy(10.dp)
+        ) {
+            items.forEach { item ->
+                Column {
+                    Text(text = item.first)
+                    Text(text = item.second)
+                }
+                HorizontalDivider(thickness = 1.dp, color = Color.Green)
+            }
+            Spacer(Modifier.height(10.dp))
+            Button(
+                modifier = Modifier.padding(10.dp),
+                onClick = onBackBtnClick
+            ) { Text("Back") }
+        }
+    }
 }
