@@ -29,7 +29,7 @@ fun Navigate(
         ) {
             composable(route = Navigasi.Formulir.name) {
                 Formulir(
-                    OnSubmitBtnClick = {
+                    onSubmitBtnClick = {
                         navController.navigate(Navigasi.Data.name)
                     }
                 )
