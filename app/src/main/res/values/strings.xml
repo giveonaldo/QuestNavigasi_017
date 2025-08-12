@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Activity2</string>
+    <string name="edit">Icon Edit</string>
+    <string name="header_text">Data Mahasiswa</string>
+    <string name="subHeader_text">Teknologi Informasi</string>
+    <string name="home">Data diri.</string>
+</resources>
