@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
                 Surface(modifier = Modifier.fillMaxSize()
                     .padding(top = 50.dp),
                     color = MaterialTheme.colorScheme.background) {
-                    
+
                 }
             }
         }
