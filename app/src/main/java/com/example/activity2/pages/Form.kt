@@ -66,6 +66,55 @@ fun Formulir(onSubmitBtnClick: () -> Unit) {
                 .padding(innerPadding).fillMaxWidth().height(500.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
-        ) {}
+        ) {
+            TextField(
+                value = txtNama,
+                onValueChange = { newText ->
+                    txtNama = newText
+                },
+                label = { Text("Nama") },
+                modifier = Modifier.padding(bottom = 15.dp)
+            )
+
+            OutlinedTextField(
+                value = txtEmail,
+                onValueChange = { newText ->
+                    txtEmail = newText
+                },
+                label = { Text("Email Address") },
+                placeholder = { Text("me@mail.com") },
+                keyboardOptions = KeyboardOptions( keyboardType = KeyboardType.Email )
+            )
+
+            Row(
+                modifier = Modifier.fillMaxWidth().padding(top = 10.dp),
+                horizontalArrangement = Arrangement.SpaceEvenly
+            ) {
+                option.forEach { item ->
+                    Row(modifier = Modifier.selectable(
+                        selected = (item == pilihan),
+                        onClick = {pilihan = item}
+                    ),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        RadioButton(
+                            selected = (item == pilihan),
+                            onClick = {pilihan = item}
+                        )
+                        Text(
+                            text = item
+                        )
+                    }
+                }
+            }
+
+            FilledTonalButton(
+                onClick = onSubmitBtnClick,
+                modifier = Modifier.padding(top = 10.dp, end = 20.dp).align(Alignment.End),
+                enabled = enabled()
+            ) {
+                Text("Submit")
+            }
+        }
     }
 }
